@@ -72,7 +72,7 @@ function initProviders(service) {
   // providers arr
   service.providers = service
     .config
-    .transport.map(initProvider(service.logger));
+    .transport.map(initProvider(service.log));
 
   // internal plugin API
   service._connectors.push(connectProviders(service.providers));

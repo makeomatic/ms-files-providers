@@ -1,0 +1,39 @@
+{
+  "name": "ms-files-providers",
+  "description": "initialization logic for cloud storage providers",
+  "main": "./lib/index.js",
+  "version": "1.0.0",
+  "scripts": {
+    "compile": "babel -d ./lib ./src",
+    "prepublish": "npm run compile",
+    "test": "npm run lint",
+    "lint": "eslint ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/makeomatic/ms-files-providers.git"
+  },
+  "author": "Vitaly Aminev <v@makeomatic.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/makeomatic/ms-files-providers/issues"
+  },
+  "homepage": "https://github.com/makeomatic/ms-files-providers#readme",
+  "dependencies": {
+    "bluebird": "^3.4.1"
+  },
+  "peerDependencies": {
+    "ms-files-gce": "~1.x.x",
+    "mservice": "~2.x.x"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-eslint": "^6.0.0",
+    "babel-plugin-transform-strict-mode": "^6.8.0",
+    "babel-register": "^6.9.0",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb-base": "^3.0.1",
+    "eslint-plugin-import": "^1.9.2",
+    "mservice": "^2.3.0"
+  }
+}

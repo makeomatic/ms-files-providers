@@ -1,6 +1,7 @@
 const Promise = require('bluebird');
 const Mservice = require('mservice');
 const assert = require('assert');
+const debug = require('debug')('ms-files-providers');
 
 /**
  * Initializes provider based on the configuration
@@ -13,6 +14,8 @@ function initProvider(logger) {
    * @type {Provider}
    */
   return transport => {
+    debug('initializing transport %j', transport);
+
     // get abstraction module
     const Provider = require(`ms-files-${transport.name}`);
     const bucket = transport.options.bucket.name;
@@ -21,6 +24,7 @@ function initProvider(logger) {
     transport.options.logger = logger.child({ bucket });
 
     // init provider
+    debug('passing options %j', transport.options);
     const provider = new Provider(transport.options);
 
     // init cname based on provider type and settings

@@ -2,7 +2,7 @@
   "name": "ms-files-providers",
   "description": "initialization logic for cloud storage providers",
   "main": "./lib/index.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "scripts": {
     "compile": "babel -d ./lib ./src",
     "prepublish": "npm run compile",
@@ -24,7 +24,7 @@
     "debug": "^2.2.0"
   },
   "peerDependencies": {
-    "ms-files-gce": "~1.x.x",
+    "ms-files-gce": "~1.x.x || ~2.x.x",
     "mservice": "~2.x.x || ~3.x.x"
   },
   "devDependencies": {

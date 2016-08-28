@@ -2,7 +2,7 @@
   "name": "ms-files-providers",
   "description": "initialization logic for cloud storage providers",
   "main": "./lib/index.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "scripts": {
     "compile": "babel -d ./lib ./src",
     "prepublish": "npm run compile",

@@ -3,6 +3,8 @@ const Mservice = require('mservice');
 const assert = require('assert');
 const debug = require('debug')('ms-files-providers');
 
+const PluginType = Mservice.PluginsTypes.database;
+
 /**
  * Initializes provider based on the configuration
  * @param  {Bunyan} bunyan instance
@@ -13,7 +15,7 @@ function initProvider(logger) {
    * Intiializes transport based on it's configuration
    * @type {Provider}
    */
-  return transport => {
+  return (transport) => {
     debug('initializing transport %j', transport);
 
     // get abstraction module
@@ -79,7 +81,7 @@ function initProviders(service) {
     .transport.map(initProvider(service.log));
 
   // internal plugin API
-  service._connectors.push(connectProviders(service.providers));
+  service._connectors[PluginType].push(connectProviders(service.providers));
 }
 
 // Public API
